@@ -1,0 +1,46 @@
+﻿@page
+@model TrackLinks.IndexModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="border bg-white rounded shadow-sm">
+    <br />
+    <div class="container row p-0 m-0">
+
+        <div class="col-9">
+            <h2 class="text-info ">My Subjects</h2>
+        </div>
+        <div class="col-3">
+            
+                <a asp-page="Create" class="btn btn-info form-control text-white "> <h5 class="item-a">Add Subject</h5></a>
+            
+        </div>
+
+    </div>
+    <br />
+</div>
+<br />
+
+<div class="container-fluid border bg-white shadow-sm rounded-lg">
+    <div class="col-sm-12 ">
+        <br />
+        @foreach (var subject in Model.subjects)
+        {
+            <div class="card">
+                <div class="card-header alert-info">
+                    @subject.Title
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Special title treatment</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a asp-page="/SubjectsDetails/sDetails" 
+                       asp-route-id="@subject.SubjectId"
+                       class="btn btn-primary">Show Links</a>
+                </div>
+            </div>
+            <br />
+        }
+    </div>
+</div>

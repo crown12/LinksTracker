@@ -1,0 +1,41 @@
+﻿@page
+@model TrackLinks.CreateModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+    <div class="border bg-white">
+        <div class="container">
+            <h2 class="text-info">Create a new subject:</h2>
+        </div>
+
+
+        <div class="container ">
+
+            <form method="post">
+                <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+
+                <div class="col-10 row">
+
+                    <div class="col-8">
+                        <input asp-for="subject.Title" class="form-control" />
+
+                    </div>
+                    <span asp-validation-for="subject.Title" class="text-danger"></span>
+                </div>
+
+                <div class="col-8 row p-3">
+
+
+                    <div class="col-7">
+                        <button type="submit" class="btn btn-info form-control text-white">Add Subject</button>
+                    </div>
+
+                    <div class="col-3 ">
+                        <a asp-page="Index" class="btn btn-success form-control ">Back</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>

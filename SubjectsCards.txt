@@ -1,0 +1,20 @@
+<div class="row p-3">
+
+            @foreach (var subject in Model.subjects)
+            {
+
+                <div class="card m-3" style="width: 18rem;">
+
+                    <img src="https://evonexus.org/wp-content/uploads/2013/12/dummy-200x200.png" class="card-img-top" alt="200">
+                    <div class="card-body">
+                        <h5 class="card-title">@subject.Title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a asp-page="/SubjectsDetails/sDetails" asp-route-id="@subject.SubjectId" class="btn btn-primary">
+                            @Html.DisplayFor(s => subject.Title)
+                        </a>
+                    </div>
+
+                </div>
+            }
+
+        </div>

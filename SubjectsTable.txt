@@ -1,0 +1,23 @@
+   @*<div class="offset-2 col-8 border p-3 mt-3 text-center">
+            <form method="get">
+                <table class="table table-striped table-hover border">
+                    <tr class="thead-dark">
+                        <th>
+                            <label asp-for="subjects.FirstOrDefault().Title"></label>
+                        </th>
+
+                    </tr>
+                    @foreach (var subj in Model.subjects)
+                    {
+                        <tr>
+                            <td>
+                                 <a asp-page="/SubjectsDetails/sDetails" asp-route-id="@subj.SubjectId" >@Html.DisplayFor(s => subj.Title)</a>
+                            </td>
+
+                        </tr>
+
+                    }
+                </table>
+
+            </form>
+        </div>*@

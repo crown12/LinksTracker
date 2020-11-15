@@ -1,0 +1,21 @@
+ <td>
+                        <button class="btn btn-success btn-sm">Details</button>
+                        @*<button class="btn btn-danger btn-sm">Delete</button>*@
+                    </td>
+
+
+
+                     @*<div class="btn-group" role="group">
+        <div class="col-6  ">
+            <div class="bg-info ">
+                <label class="float-left text-white align-text-bottom font-weight-bold ">&nbsp; Useful link </label>
+                <button class=" btn btn-info ">&nbsp; Useful link </button>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="bg-secondary">
+                <a asp-page="Add" asp-route-id="@Model.tagId" class="btn btn-secondary" style="margin:-20px;">Add</a>
+            </div>
+        </div>
+       
+    </div>*@

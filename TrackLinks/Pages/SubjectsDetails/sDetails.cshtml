@@ -1,0 +1,105 @@
+﻿@page
+@model TrackLinks.sDetailsModel
+@{
+    ViewData["Title"] = "sDetails";
+
+}
+
+
+<div class="container ">
+
+    <div class="row " role="group">
+
+        <div class="bg-primary p-2 col-8">
+            <div class="col-8 ">
+                <a class="text-sm-left text-white align-items-center ">
+                    <h4>
+                        Adding Useful Link for <span class="text-dark"> @Model.details[0].Subject.Title</span>
+                    </h4>
+                </a>
+            </div>
+        </div>
+
+        <div class="bg-secondary  col-6 col-md-4 ">
+
+            <div class="text-sm-right ">
+
+                <a asp-page="Add" asp-route-id="@Model.tagId" class="btn btn-secondary col-12 align-items-center p-3">
+                    <h4>
+                        Add
+                    </h4>
+                </a>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+<br />
+
+
+<div class="border bg-white shadow-sm p-4">
+
+    <br />
+
+    @if (Model.details.Count() == 0)
+    {
+        <p class="alert-info">No details Available  </p>
+
+
+    }
+
+    else
+    {
+
+        <table class="table table-striped table-hover border-bottom">
+
+            <tr class="thead-dark">
+
+                <th scope="col">Description</th>
+                <th scope="col">Priority</th>
+                <th scope="col">Subject</th>
+                <th scope="col"></th>
+
+            </tr>
+
+
+
+            @foreach (var subD in Model.details)
+            {
+                <tr>
+                    <td>
+                        <span class="badge badge-warning sm">
+                            <a asp-page="/Subjects/Index">
+                                back
+                            </a>
+                        </span>
+                        <a href="@subD.Link" class="btn btn-link" target="_blank"> @subD.Description</a>
+
+                    </td>
+                    <td>@subD.Priority</td>
+                    <td>@subD.Subject.Title</td>
+
+                    <td>
+                        <div class="btn-group" role="group">
+                            <a class="btn btn-primary text-white" asp-page="Edit" asp-route-id="@subD.SubjectDetailId">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <a class="btn btn-danger text-white" asp-page="Delete" asp-route-id="@subD.SubjectDetailId">
+                                <i class="fas fa-trash-alt"></i>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            }
+
+
+        </table>
+
+
+    }
+
+</div>
